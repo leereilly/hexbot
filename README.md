@@ -6,4 +6,4 @@ This was a lunchtime hack to build something completely useless with [Hexbot](ht
 
 Readers older than 30 may remember that old [DVD screensaver](https://www.youtube.com/watch?v=m8NAlDOCG6g)? This is the Noops Screensaver built with [Phaser](http://phaser.io/).
 
-See it in action ![here](https://leereilly.net/noops-screensaver) ~~Enjoy!!!~~
+See it in action [here](https://leereilly.net/noops-screensaver) ~~Enjoy!!!~~
