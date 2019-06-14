@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"></script>
+    <meta name="twitter:card"         content="summary_large_image">
+    <meta name="twitter:site"         content="@leereilly">
+    <meta name="twitter:creator"      content="@leereilly">
+    <meta name="twitter:title"        content="Noops Screensaver">
+    <meta name="twitter:description"  content="Like the ol' DVD screensaver from yesterday. But with Noops.">
+    <meta name="twitter:image"        content="social-card.png">
+    <meta name="og:url"               content="https://leereilly.net/noops-screensaver/" />
+    <meta name="og:type"              content="website" />
+    <meta name="og:title"             content="Noops Screensaver" />
+    <meta name="og:description"       content="Like the ol' DVD screensaver from yesterday. But with Noops." />
+    <meta name="og:image"             content="https://leereilly.net/noops-screensaver/social-card.png" />
+</head>
+<body bgcolor="#000000">
+    <style>
+      canvas {display : block; margin : auto;}
+      body {color: white; text-align: center; font-family: Consolas, monaco, monospace}
+      a {color: white;}
+    </style>
+
+    <script>
+    var config = {
+        type: Phaser.AUTO,
+        width: 800,
+        height: 600,
+        physics: {
+            default: 'arcade',
+        },
+        scene: {
+            preload: preload,
+            create: create
+        }
+    };
+
+    var game = new Phaser.Game(config);
+
+    /* Hardcoded Hexbot API response. See https://github.com/noops-challenge/hexbot#note-to-developers. */
+    function randomHex() {
+      const hexMax = 256 * 256 * 256;
+      return '#' + Math.floor(Math.random() * hexMax).toString(16).toUpperCase().padStart(6, '0');
+    }
+
+    function preload () {
+      this.load.image('noops', 'noops.png');
+    }
+
+    function create () {
+      randomColor = randomHex()
+      this.cameras.main.setBackgroundColor(randomColor)
+
+      //var noops = this.physics.add.image(Math.floor(Math.random() * 799), Math.floor(Math.random() * 599), 'noops');
+      var noops = this.physics.add.image(100, 200, 'noops');
+      noops.tint = Math.random() * 0xffffff;
+      noops.setVelocity(100, 200);
+      noops.setBounce(1, 1);
+      noops.setCollideWorldBounds(true);
+    }
+  </script>
+  <h1>Noops Screensaver</h1>
+  <p>A useless response to the <a href="https://noopschallenge.com/challenges/hexbot">Hexbot Challenge</a>. Inspired by the <a href="https://www.youtube.com/watch?v=m8NAlDOCG6g">DVD screensaver</a>.
+  <p><sup>Source: <a href="https://github.com/leereilly/noops-screensaver">https://github.com/leereilly/noops-screensaver</a></sup></p>
+</body>
+</html>
