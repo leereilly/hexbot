@@ -51,8 +51,7 @@
       randomColor = randomHex()
       this.cameras.main.setBackgroundColor(randomColor)
 
-      //var noops = this.physics.add.image(Math.floor(Math.random() * 799), Math.floor(Math.random() * 599), 'noops');
-      var noops = this.physics.add.image(100, 200, 'noops');
+      var noops = this.physics.add.image(Math.floor(Math.random() * 799), Math.floor(Math.random() * 599), 'noops');
       noops.tint = Math.random() * 0xffffff;
       noops.setVelocity(100, 200);
       noops.setBounce(1, 1);
